@@ -1,0 +1,18 @@
+<template>
+    
+    <lightning-card  title="Car Tile List" icon-name="standard:account">
+       <div  class= "slds-p-around_medium wrapper" >
+        <template if:true={getCarListHandler}>
+            <div class="content">
+                <template for:each={cars} for:item="car">
+                    <c-car-tile key={car.Id} car={car} onselected={handleCarSelected}></c-car-tile>
+                </template>
+            </div>
+        </template>
+        <template if:false={cars.length}>
+            <c-place-holder message="No cars found "> </c-place-holder>
+        </template>
+       </div>
+    </lightning-card>
+
+</template>

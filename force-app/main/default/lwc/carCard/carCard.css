@@ -1,0 +1,8 @@
+section{
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    text-transform: UPPERCASE;
+    border-radius: 5px;
+    background-color: rgb(203, 194, 194);
+}

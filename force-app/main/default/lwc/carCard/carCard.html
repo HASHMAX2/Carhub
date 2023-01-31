@@ -1,0 +1,34 @@
+<template>
+  <lightning-card title={carName} icon-name="standard:article">
+    <template if:true={recordId}>
+      <lightning-button-icon variant="base" size="xx-small" slot="actions" icon-name="utility:expand_alt" 
+      onclick={handlenavigateRecord} alternative-text="opne"></lightning-button-icon>
+    </template>
+    
+    <div class="slds-m-horizontal_medium">
+      <template if:true={recordId}>
+        <lightning-record-view-form
+        object-api-name={objectApiName}
+        record-id={recordId}
+        density="compact"
+        onload={loadHandler}
+      >
+      <img src={carPictureUrl} alt="img not found">
+      <lightning-output-field field-name={categoryField}> </lightning-output-field>
+      <lightning-output-field field-name={makeField}> </lightning-output-field>
+      <lightning-output-field field-name={msrpField}> </lightning-output-field>
+      <section>Other Features</section>
+        
+      <lightning-output-field field-name={fuelTypeField}> </lightning-output-field>
+      <lightning-output-field field-name={seatsField}> </lightning-output-field>
+      <lightning-output-field field-name={controlField}> </lightning-output-field>
+      
+      </lightning-record-view-form>
+ 
+      </template>
+      <template if:false={recordId}>
+        <c-place-holder message="Select a car to see details">  </c-place-holder>
+      </template>
+         </div>
+  </lightning-card>
+</template>
